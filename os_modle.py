@@ -10,6 +10,7 @@ def modle():
     os.path.abspath(path)                #返回输入的绝对路径
     os.path.dirname(path)                #返回父级目录绝对路径
     os.environ['HOME']                   #输出指定环境变量
+    os.makedirs(path[, mode])            #递归创建文件夹
 
 
 
