@@ -9,8 +9,9 @@ def modle():
     os.listdir(path)                     #返回path路径下的所有文件的列表
     os.path.abspath(path)                #返回输入的绝对路径
     os.path.dirname(path)                #返回父级目录绝对路径
-    os.environ['HOME']                   #输出指定环境变量
+    os.environ['HOME']                   #设置环境变量
     os.makedirs(path[, mode])            #递归创建文件夹
+    os.environ.get('WORKON_HOME')        #获取环境变量
 
 
 
