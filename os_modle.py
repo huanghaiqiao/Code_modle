@@ -4,7 +4,7 @@ import os
 常见sys模块，基本用法
 """
 def modle():
-    os.getcwd()                          #返回当前文件绝对路径
+    os.getcwd()                          #返回当前文件绝对路径，当使用import时候会返回import的路径
     os.path.join(path1[, path2[, ...]])  #路径拼接
     os.path.exists(path)                 #文件存在返回,ture
     os.listdir(path)                     #返回path路径下的所有文件的列表
@@ -15,7 +15,8 @@ def modle():
     os.environ.get('WORKON_HOME')        #获取环境变量,方法一
     os.getenv('path')                    #获取环境变量,方法二
     os.system(command)                   #输入cmd命令
-    os.popen(Command).read()             #获取屏幕cmd输入的输出，read\readline\redalines 
+    os.popen(Command).read()             #获取屏幕cmd输入的输出，read\readline\redalines
+    os.path.dirname(__file__)            #返回文件自己绝对路径
 
 
 
