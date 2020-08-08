@@ -17,12 +17,14 @@ def modle():
     os.system(command)                   #输入cmd命令
     os.popen(Command).read()             #获取屏幕cmd输入的输出，read\readline\redalines
     os.path.dirname(__file__)            #返回文件自己绝对路径
+    os.path.splitext('/fun/tion.py')     #返回两个值/fun/tion，.py
+    os.path.split('/fun/tion.py')        #返回两个值/fun，tion.py
 
 
 
 import sys
 def modle():
-    sys.path.append('/home/ershisui/')  #加入到环境变量
+    sys.path.append('/home/ershisui/')  #加入到python环境变量
     sys.path                            #输出python环境
     sys.argv                            #获取python，带参输入的列表
 
