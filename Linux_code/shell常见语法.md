@@ -122,3 +122,12 @@ filename1 -ot filename2 #如果 filename2新，则为真。
 | -lt  | 小于     |
 | -le  | 小于等于 |
 
+
+
+在shell中使用
+
+```
+set -u  #变量为声明使用，报错
+set -e  #程序报错退出
+```
+
