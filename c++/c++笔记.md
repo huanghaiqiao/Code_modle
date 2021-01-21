@@ -44,3 +44,20 @@ a = &m;
 std::cout << boolalpha;  //打印0，1为true false
 ```
 
+数组
+
+```c++
+// 数组要么在定义时候全部赋值
+int bv[2] = {1,2};
+// 不然只能单个赋值
+int bv[2];
+bv[0]=1;
+```
+
+字节
+
+```c++
+int bv[2] = {1,2};
+sizeof(bv)/sizeof(int); // 得到数组长度
+```
+
