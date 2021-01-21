@@ -10,7 +10,8 @@ c++汇总
 
 ```c++
 char a = '';
-std::string b ="";
+std::string b =""; // 字符串
+char kk[] = "huanghaiqiaowoaini"; // 字符串
 // 字符用单引号
 // 字符串用双引号
 ```
@@ -36,6 +37,10 @@ int m = 1;
 void *a;
 a = &m;
 *a = 12; //直接报错，不允许修改，void *用于比较地址一样与否
+
+// 二维
+char **p // 二维指针
+char *p  // 一维指针
 ```
 
 打印
