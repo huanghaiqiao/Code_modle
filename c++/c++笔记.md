@@ -21,7 +21,9 @@ std::string b ="";
 // 输出a的地址
 int a=1;
 std::cout << &a << "\n";
-// 
-
+// 打印地址
+int m = 1;
+int *a=&m;
+std::cout << a << "\n";  // 注意：当为cha指针时候必须加(void *)才能输出指针
 ```
 
