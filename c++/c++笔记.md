@@ -54,7 +54,7 @@ for (int i = 0; i < MAX; i++)
 {
      ptr[i] = &var[i]; // 赋值为整数的地址
  }
-// 赋值二
+// 赋值二，强记，它就是类似于，字符串列表
 const char *names[MAX] = {
                    "Zara Ali",
                    "Hina Ali",
