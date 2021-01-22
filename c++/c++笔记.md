@@ -43,6 +43,31 @@ char **p // 二维指针
 char *p  // 一维指针
 ```
 
+指针数组
+
+```c++
+// 指针数组赋值
+int  var[MAX] = {10, 100, 200};
+int *ptr[MAX];
+ 
+for (int i = 0; i < MAX; i++)
+{
+     ptr[i] = &var[i]; // 赋值为整数的地址
+ }
+// 赋值二
+const char *names[MAX] = {
+                   "Zara Ali",
+                   "Hina Ali",
+                   "Nuha Ali",
+                   "Sara Ali",
+ };
+   for (int i = 0; i < MAX; i++)
+   {
+      cout << "Value of names[" << i << "] = ";
+      cout << names[i] << endl;
+   }
+```
+
 打印
 
 ```c++
