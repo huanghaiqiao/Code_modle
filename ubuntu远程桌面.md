@@ -4,5 +4,5 @@
 windowns 远程ubuntu
 # ubuntu 安装
 sudo apt-get install tightvncserver xrdp
-# 图新界面隐藏，需要按 win + A 案件
+# 图新界面隐藏，需要按 win + A 按键
 ```
