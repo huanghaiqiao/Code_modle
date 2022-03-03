@@ -40,4 +40,4 @@ No protocol specified
 Unable to init server: Could not connect: Connection refused
 (virt-manager:3731): Gtk-WARNING **: 06:20:33.809: cannot open display: :11.0
 ```
-
+下载镜像,安装
