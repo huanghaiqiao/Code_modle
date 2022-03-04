@@ -6,3 +6,5 @@ exprot https_proxy=http://child-prc.intel.com:913
 追加
 Acquire::http::Proxy "http://child-prc.intel.com:913";
 Acquire::https::Proxy "http://child-prc.intel.com:913";
+
+安装 openssh-server
