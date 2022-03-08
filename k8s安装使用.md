@@ -107,6 +107,8 @@ systemctl status kubelet
 kubectl logs -f -n kube-system calico-kube-controllers-7dd874d5b4-l8zc9
 
 # 重启集群
+systemctl daemon-reload
+# 涉及文件/etc/kubernetes/manifests/kube-controller-manager.yaml
 systemctl restart kubelet
 
 # 查看需要版本
@@ -124,6 +126,8 @@ kubectl describe node
 
 # 比较好用的calico
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+
 ```
 
 问题：http://www.hyhblog.cn/2021/02/21/k8s-flannel-pod-cidr-not-assigned/
@@ -154,5 +158,19 @@ docker update cf877cb5ea48 9120211fed93 --restart=always
 # 查看docker服务是否开机启动
 sudo systemctl list-unit-files | grep enable|grep docker
 # 删除不掉容器 https://www.jb51.net/article/208574.htm
+```
+
+
+
+修错ErrImagePull&&ImagePullBackOff：https://blog.csdn.net/u013641234/article/details/88770647
+
+```yaml
+# 修改 /etc/kubernetes/manifests/kube-controller-manager.yaml
+# imagePullPolicy: IfNotPresent ----> imagePullPolicy: Always 
+spec: 
+  containers: 
+    - name: nginx 
+      image: image: reg.docker.lc/share/nginx:latest 
+      imagePullPolicy: IfNotPresent   #或者使用Never
 ```
 
