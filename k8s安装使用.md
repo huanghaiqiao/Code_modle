@@ -174,3 +174,4 @@ spec:
       imagePullPolicy: IfNotPresent   #或者使用Never
 ```
 
+centos安装docker：https://jhooq.com/docker-daemon-centos/
