@@ -70,3 +70,5 @@ import tensorflow      #未找到 libcudart.so.11.0
 参考：https://zhuanlan.zhihu.com/p/91334380
 
 参考：[ubuntu20.04 source.list](https://gist.github.com/ishad0w/788555191c7037e249a439542c53e170)
+
+参考：[cuda并行原理](https://developer.nvidia.com/blog/even-easier-introduction-cuda/)
