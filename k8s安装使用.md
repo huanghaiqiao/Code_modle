@@ -181,8 +181,8 @@ Environment="NO_PROXY=see-prc-renlefu-ci-pwek-server-2,127.0.0.1,10.240.224.51,1
 ```shell
 sudo systemctl daemon-reload
 sudo systemctl restart docker
-
 sudo systemctl show --property=Environment docker
+```
 
 
 修错ErrImagePull&&ImagePullBackOff：https://blog.csdn.net/u013641234/article/details/88770647
