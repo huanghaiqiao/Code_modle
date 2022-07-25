@@ -160,6 +160,29 @@ sudo systemctl list-unit-files | grep enable|grep docker
 # 删除不掉容器 https://www.jb51.net/article/208574.htm
 ```
 
+docker设置代理
+
+```shell
+sudo mkdir -p /etc/systemd/system/docker.service.d
+sudo touch /etc/systemd/system/docker.service.d/http-proxy.conf
+
+# 添加
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2019-2020 Intel Corporation
+
+[Service]
+Environment="HTTP_PROXY=http://child-prc.intel.com:913"
+Environment="HTTPS_PROXY=http://child-prc.intel.com:913"
+Environment="NO_PROXY=see-prc-renlefu-ci-pwek-server-2,127.0.0.1,10.240.224.51,192.168.51.1,172.18.0.1,localhost,virt-api,.svc,.svc.cluster.local,cdi-api,127.0.0.1,10.96.0.0/12,10.32.0.0/12,10.32.0.0/12,172.32.1.0/12,localhost,virt-api,.svc,.svc.cluster.local,cdi-api,127.0.0.1,10.96.0.0/12,10.32.0.0/12,10.245.0.0/16,10.67.115.240,10.67.115.43,NONE"
+```
+
+重启
+
+```shell
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
+sudo systemctl show --property=Environment docker
 
 
 修错ErrImagePull&&ImagePullBackOff：https://blog.csdn.net/u013641234/article/details/88770647
