@@ -5,3 +5,7 @@ Mobaxter无限制session：https://www.zdfans.com/html/45749.html
 BigDL:https://bigdl.readthedocs.io/en/latest/doc/Ray/QuickStart/ray-quickstart.html
 
 ## 备注。
+
+```
+ssh -L 18888:localhost:18888 intel@10.67.106.232
+```
