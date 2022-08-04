@@ -205,3 +205,9 @@ centos安装docker：https://jhooq.com/docker-daemon-centos/
 ```
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ```
+
+问题：节点加入后cni报错
+
+```
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+```
