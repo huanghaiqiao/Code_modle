@@ -198,3 +198,10 @@ spec:
 ```
 
 centos安装docker：https://jhooq.com/docker-daemon-centos/
+
+
+问题：*Unable to locate package kubelet*
+
+```
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+```
