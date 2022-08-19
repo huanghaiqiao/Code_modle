@@ -14,10 +14,10 @@ def train_data(images, labels):
 def simple_layer(inputs, input_size, output_size):
     """
     封装一层神经网络
-    :param inputs: 数据
-    :param input_size: 行数
-    :param output_size: 列数
-    :return: 无
+    param inputs: 数据
+    param input_size: 行数
+    param output_size: 列数
+    return: 无
     """
     w = tf.Variable(tf.truncated_normal([input_size,output_size]))
     # w = tf.Variable(tf.random_normal([input_size,output_size]))
