@@ -38,6 +38,7 @@ int *fun(int *array_a, int *array_b, int *array_c, int len_a, int len_b, int len
 
 int main(){
 
+    // 合并两个有序数组
     int array_a[] = {1,2,3,4,6,9,11,14};
     int array_b[] = {2,2,3,4,6,9,80,123,333,666};
     int len_a = sizeof(array_a)/sizeof(int);
