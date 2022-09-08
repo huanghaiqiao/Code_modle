@@ -52,7 +52,7 @@ float在64位计算机系统占4字节，4 * 8 * 8 = 256
 
 
 
-![](C:\Users\haiqiaox\OneDrive - Intel Corporation\Desktop\手写.assets\Fig1.jpg)
+![](https://github.com/huanghaiqiao/Code_modle/blob/master/Fig1.jpg)
 
 
 
