@@ -4,6 +4,8 @@ Mobaxter无限制session：https://www.zdfans.com/html/45749.html
 
 画图xmind： https://www.xmind.cn/download/
 
+原型图：https://huatu.98youxi.com/lct/#Xa661e05b24482449418e6bbf44be4bbd
+
 BigDL:https://bigdl.readthedocs.io/en/latest/doc/Ray/QuickStart/ray-quickstart.html
 
 ## 备注。
