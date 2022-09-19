@@ -42,3 +42,12 @@ Environment="HTTPS_PROXY=http://child-prc.intel.com:913"
 Environment="NO_PROXY=see-prc-renlefu-ci-pwek-server-2,127.0.0.1,10.240.224.51,192.168.51.1,172.18.0.1,localhost,virt-api,.svc,.svc.cluster.local,cdi-api,127.0.0.1,10.96.0.0/12,10.32.0.0/12,10.32.0.0/12,172.32.1.0/12,localhost,virt-api,.svc,.svc.cluster.local,cdi-api,127.0.0.1,10.96.0.0/12,10.32.0.0/12,10.245.0.0/16,10.67.115.240,10.67.115.43,NONE"
 ```
 
+操作完毕，执行
+
+```
+# 更新配置
+systemctl daemon-reload
+# 重启
+systemctl restart docker
+```
+
