@@ -2,7 +2,7 @@
 
 时间序列，openmp自带时间计算
 
-```
+```c++
 #include <omp.h>
 double t1 = omp_get_wtime();
 double t2 = omp_get_wtime();
