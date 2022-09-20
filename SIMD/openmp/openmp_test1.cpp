@@ -15,7 +15,7 @@ int fun(int *a, int N){
     auto stop = std::chrono::high_resolution_clock::now();
 
     cout << "开启优化线程数：" << N << "  --";
-    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(stop-start).count() << "毫秒" <<endl;
+    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(stop-start).count() << "微秒" <<endl;
     return 0;
 
 }
@@ -28,7 +28,7 @@ int main(int argc, char **argv){
     }
     auto stop = std::chrono::high_resolution_clock::now();
     cout << "原始算法：";
-    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(stop-start).count() << "毫秒" <<endl;
+    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(stop-start).count() << "微秒" <<endl;
 
 
     for(int i=0; i<1000; i++){
