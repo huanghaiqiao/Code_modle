@@ -102,3 +102,44 @@ int main(int argc, char **argv){
     f = renderFrame;
 }
 ```
+注意错误
+
+```c++
+fun_new()
+int fun_new(); // 编译器和执行都不会报错，但是下面这句fun_new没有执行
+```
+
+类python装饰器功能
+
+```C++
+/***
+ * 类似python函数装饰器功能
+ * 不改变函数情况下，增加性能测试
+    ***/
+
+#include <iostream>
+#include <chrono>
+using namespace std;
+static int a[102400];
+
+int fun(){
+    for (int i=0; i<102400; i++){
+        a[i] = i*i + i*2; 
+    }
+    return 0;
+}
+
+int fun_new(int (*f)()){
+    auto start = std::chrono::high_resolution_clock::now();
+    f();
+    auto stop = std::chrono::high_resolution_clock::now();
+    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(stop-start).count() << "微秒" <<endl;
+    return 0;
+}
+
+int main(int argc, char **argv){
+    fun_new(fun);
+    return 0;
+}
+```
+
