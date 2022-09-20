@@ -91,3 +91,14 @@ int bv[2] = {1,2};
 sizeof(bv)/sizeof(int); // 得到数组长度
 ```
 
+声明一个指针，指向函数
+
+```c++
+float renderFrame() {
+	return 0;
+}
+int main(int argc, char **argv){
+    float (*f)();
+    f = renderFrame;
+}
+```
