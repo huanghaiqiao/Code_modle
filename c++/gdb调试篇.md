@@ -30,3 +30,9 @@ ps -axu | grep a.out
 gdb attch 830311
 ```
 
+查看帮助命令
+
+```
+man print
+```
+
