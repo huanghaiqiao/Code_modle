@@ -143,3 +143,26 @@ int main(int argc, char **argv){
 }
 ```
 
+typedef 使用
+
+```c++
+typedef int (*FUNC_P)(int, int); 
+// 定义了一个函数指针类型，可以使用FUNC_P去定义指向函数的指针，其指向的函数类型必须是返回值为int、参数为两个且均为int
+// 函数指针类型，替换
+typedef int p;
+// 函数指针类型，替换
+```
+
+函数指针
+
+```c++
+typedef int ( *func)(int , int); // 定义函数指针
+int func2(int a, int b){
+    return 0;
+}
+int main(int argc, char **argv){
+	func func1 = func2; // 实例化函数指针指向
+}
+```
+
+
