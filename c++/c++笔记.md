@@ -183,5 +183,21 @@ int c = (a==b)?3:4;
 // 如果表达式1成立，则输出表达式2的值，否则输出表达式3的值
 ```
 
+**static关键字**
 
+```c++
+int func1(){
+    static int a = 1;
+    cout << "a = "  << a << endl;
+    a++;
+    return 0;
+}
+
+int main(){
+    func1();
+    func1();
+}
+// 输出a = 1
+// a = 2
+```
 
