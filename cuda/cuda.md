@@ -97,6 +97,12 @@ int main()
 }
 // 编译命令 nvcc main.cu -o test
 ```
+nvprof 工具使用，查看函数执行时间
+
+```shell
+nvcc  ./main.cu -o test
+sudo nvprof --unified-memory-profiling off ./test  # 需要用sudo权限
+```
 
 参考：https://zhuanlan.zhihu.com/p/91334380
 
