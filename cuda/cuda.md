@@ -65,7 +65,38 @@ import tensorflow      #未找到 libcudart.so.11.0
 # 解决 conda install cudatoolkit
 ```
 
+cuda 问题解决
 
+```shell
+nvcc --version # 显示找不到
+sudo apt install nvidia-cuda-toolkit # 按照提示安装工具
+```
+
+注意：
+
+1. nvcc 可以编译cpp文件，例如：nvcc main.cpp -o test
+2. 代码中有device代码，其文件后缀必须为 *.cu*
+
+示例代码
+
+```c++
+#include <iostream>
+#include <cuda_runtime.h>
+using namespace std;
+
+__global__ void demo(void)
+{
+	printf("Hello from GPU\n");
+}
+
+int main()
+{
+	demo<<<1,1>>>();
+	cudaDeviceSynchronize(); // 注意想要printf生效必须后面跟cudaDeviceSynchronize
+	return 0;
+}
+// 编译命令 nvcc main.cu -o test
+```
 
 参考：https://zhuanlan.zhihu.com/p/91334380
 
