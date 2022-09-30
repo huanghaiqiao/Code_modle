@@ -276,3 +276,42 @@ c++存储区域
 3. 静态区（全局区），全局变量和静态变量（只初始化一次），在程序全部结束之后释放
 4. 常量区
 5. 代码区
+
+随机整数
+
+```c++
+mutable int var; // 随机整数
+```
+
+类的注意事项
+
+1. ##### 注意无参构造不需要加(),不报错也没有原因显示,待研究问题
+
+2. 类可以有多个构造函数，有且仅有一个析构函数
+
+```c++
+#include <iostream>
+class A
+{
+public:
+    int b;
+    A(){
+    b = 123;
+    std::cout << "------a-------" << std::endl; //实际上调用的是func.operator()(i)这个函数
+    }
+    int operator() (int value) //重载()运算符，传入int的参数，
+    // 所谓的重载可以理解为定义了一个函数，就是()函数
+    {
+    std::cout << "b :"<<b << std::endl; //实际上调用的是func.operator()(i)这个函数
+    return 100;
+    }
+}; // 类后面需要加;
+ 
+int main()
+{
+    int i = -1;
+    A func; // 构造函数已经执行,无参构造不能加(),切记
+    std::cout << func(i) << std::endl; //实际上调用的是func.operator()(i)这个函数
+    return 0;
+}
+```
