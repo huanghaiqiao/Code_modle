@@ -315,3 +315,36 @@ int main()
     return 0;
 }
 ```
+
+比较迷惑的案例，相比较上面案例
+
+```c++
+#include <iostream>
+class A
+{
+public:
+    int b;
+    A(){
+    b = 123;
+    std::cout << "------a-------" << std::endl; //实际上调用的是func.operator()(i)这个函数
+    }
+    A(int m){
+    b = m;
+    std::cout << "------a-------" << std::endl; //实际上调用的是func.operator()(i)这个函数
+    }
+    int operator() (int value) //重载()运算符，传入int的参数，
+    // 所谓的重载可以理解为定义了一个函数，就是()函数
+    {
+    std::cout << "执行了重载函数 :"<<b << std::endl; //实际上调用的是func.operator()(i)这个函数
+    return 100;
+    }
+}; // 类后面需要加;
+ 
+int main()
+{
+    int i = -1;
+    A func(129); // 这里执行了有参构造，这是构造函数
+    std::cout << func(i) << std::endl; //实际上调用的是func.operator()(i)这个函数
+    return 0;
+}
+```
