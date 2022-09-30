@@ -28,3 +28,16 @@ Mat::depth() // 获取的是通道的数据类型，而常用的数据类型又�
 #define CV_8S   1
 #define CV_16U  2
 #define CV_16S  3
+```
+
+Mat.at<uchar>(x, y)获取灰度图值，对应数据类型
+
+```c++
+Mat.at<uchar>———CV_8U
+Mat.at<char>———–CV_8S
+Mat.at<short>———CV_16S
+Mat.at<ushort>——–CV_16U
+Mat.at<int>———–CV_32S
+Mat.at<float>———-CV_32F
+Mat.at<double>——–CV_64F
+```
