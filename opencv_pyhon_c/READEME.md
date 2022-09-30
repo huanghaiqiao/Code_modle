@@ -20,3 +20,11 @@ cv::waitKey(); // 等待
 
 cv::format(image, cv::Formatter::FMT_C) << ";" << std::endl // 按照指定格式打印所有数据
 ```
+opencv数据类型
+
+```c++
+Mat::depth() // 获取的是通道的数据类型，而常用的数据类型又会宏定义成数字
+#define CV_8U   0
+#define CV_8S   1
+#define CV_16U  2
+#define CV_16S  3
