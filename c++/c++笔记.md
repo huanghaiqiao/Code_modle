@@ -210,3 +210,46 @@ int main(){
 // a = 2
 ```
 
+字节(64位系统)
+
+| 数据类型           | 字节 | 位数 | 数据范围 |
+| ------------------ | ---- | ---- | -------- |
+| int (signed int)   | 4    | 32   |          |
+| unsigned int       | 4    | 32   |          |
+| float              | 4    | 32   |          |
+| short int          | 2    | 16   |          |
+| unsigned short int | 2    | 16   |          |
+| long int           | 8    | 64   |          |
+| double             | 8    | 64   |          |
+
+C++ 进制打印
+
+```c++
+#include<bitset>
+#include<iostream>
+int main(){
+    int c=0;
+    bitset<8> a (1); // 有参构造
+    std::cout<<a<<"\n";
+    return 0;
+}
+// C++ 只有才能转化二进制bitset,<>内设置位数
+```
+
+dec 十进制，oct 八进制，hex 16进制
+
+```C++
+#include<iostream>
+#include<bitset>
+using namespace std;//必须得加上 
+int main()
+{
+	int a=1000;
+	cout<<"默认下"<<a<<endl;
+	cout<<"十进制"<<dec<<a<<endl;
+	cout<<"八进制"<<oct<<a<<endl;//八进制 
+	cout<<"十六进制"<<hex<<a<<endl;	//十六进制 
+	cout<<"二进制"<<bitset<16>(a)<<endl; //输出为十六位二进制数 
+	return 0;
+}
+```
