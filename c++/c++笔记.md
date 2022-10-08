@@ -348,3 +348,22 @@ int main()
     return 0;
 }
 ```
+
+在C/C++中，在使用[预编译](https://so.csdn.net/so/search?q=预编译&spm=1001.2101.3001.7020)指令**#include**的时候，为了防止重复引用造成二义性，通常有两种方式
+
+方式一
+
+```C++
+#ifndef _CODE_BLOCK
+#define _CODE_BLOCK
+ 
+// code
+ 
+#endif// _CODE_BLOCK 
+```
+
+方式二
+
+```c++
+#pragma once
+```
