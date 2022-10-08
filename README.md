@@ -8,6 +8,8 @@ Mobaxter无限制session：https://www.zdfans.com/html/45749.html
 
 BigDL:https://bigdl.readthedocs.io/en/latest/doc/Ray/QuickStart/ray-quickstart.html
 
+[腾讯在线文档](https://docs.qq.com/desktop/?u=57b6096a94084adf8a9c552d6adb856d&_from=1)
+
 ## 备注。
 
 ```
