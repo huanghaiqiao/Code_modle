@@ -16,3 +16,9 @@ BigDL:https://bigdl.readthedocs.io/en/latest/doc/Ray/QuickStart/ray-quickstart.h
 ssh -L 18888:localhost:18888 intel@10.67.106.232
 jupyter notebook --ip=10.67.106.232
 ```
+
+docker 查看卷
+
+```shell
+docker volume ls
+```
