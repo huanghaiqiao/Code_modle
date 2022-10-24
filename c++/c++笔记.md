@@ -367,3 +367,34 @@ int main()
 ```c++
 #pragma once
 ```
+
+链表的构造
+
+```c++
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {} // 结构体构造函数
+    ListNode(int x) : val(x), next(nullptr) {} // 有参构造
+    ListNode(int x, ListNode *next) : val(x), next(next) {} 
+};
+
+student * creat_student(){
+    student * head = new student;
+    student * ptr = head;
+    int num[5] = {2,3,4,5,9};
+    int len = sizeof(num) / sizeof(int);
+    std::cout << "总长度：" << len << endl;
+    for(int i=0;i<len;i++){
+        student * node = new student;
+        node -> a = num[i];
+        ptr -> next = node;
+        ptr = node;
+        ptr -> next = NULL;
+        printf("%d \n",num[i]);
+    }
+    return head;
+}
+
+// 假如需要delete空间，需要删除所有的new
+```
