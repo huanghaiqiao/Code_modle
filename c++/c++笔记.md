@@ -398,3 +398,18 @@ student * creat_student(){
 
 // 假如需要delete空间，需要删除所有的new
 ```
+C++查看数据类型
+
+```c++
+#include <typeinfo>
+#include <iostream>
+ 
+using namespace std;
+int main(){
+   int iobj = 10; 
+ 
+   cout << typeid( iobj ).name() << endl;  //  打印: int 
+   cout << typeid( 8.16 ).name() << endl; // 打印: double      
+   return 0;
+}
+```
