@@ -10,7 +10,7 @@ BigDL:https://bigdl.readthedocs.io/en/latest/doc/Ray/QuickStart/ray-quickstart.h
 
 [腾讯在线文档](https://docs.qq.com/desktop/?u=57b6096a94084adf8a9c552d6adb856d&_from=1)
 
-[百度脑图](https://naotu.baidu.com/home)
+[百度在线脑图](https://naotu.baidu.com/home)
 
 ## 备注。
 
