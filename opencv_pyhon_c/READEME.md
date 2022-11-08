@@ -58,3 +58,7 @@ int main()
 }
 //这种方法访问速度很慢，使用mat.ptr<uchar>(i,j)(单通道） mat.ptr<vec3b>(i,j) （3通道）会快很多
 ```
+ [Sobel算子原理解析](https://www.bilibili.com/video/BV11341127pe/?spm_id_from=333.337.search-card.all.click&vd_source=c8569a8ede793684fdee2d887f232dd6)
+
+- 边缘检测---本质是梯度计算
+- 图像边缘，使用paadding填充
