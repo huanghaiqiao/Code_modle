@@ -79,3 +79,4 @@ Ipp32f* pSrc8u_Re = (float*)img_Re.data;
 ```c++
 printf("%.1f,", pDst[i * img_Im.cols + j]); // 1f
 ```
+注意float打印看着相等实际精度不一样
