@@ -422,3 +422,9 @@ int *array1 = new int[1,2,3,4,5];
 // 注意：array表示数组也可是第一元素指针，sizeof，数组名就是整个数组长度
 // new 出来的只是数组，不为数组，只是指针
 ```
+注意
+
+```
+(float)(total_num - single_er_num) / total_num * 100 
+// 注意必须只float第一个数就行了
+```
