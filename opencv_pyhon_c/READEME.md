@@ -74,3 +74,8 @@ dx.data // 是char指针
 // 但是ipp接受数据时候需要操作
 Ipp32f* pSrc8u_Re = (float*)img_Re.data;
 ```
+注意
+
+```c++
+printf("%.1f,", pDst[i * img_Im.cols + j]); // 1f
+```
