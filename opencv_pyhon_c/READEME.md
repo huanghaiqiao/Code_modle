@@ -62,3 +62,15 @@ int main()
 
 - 边缘检测---本质是梯度计算
 - 图像边缘，使用paadding填充
+
+[opencv官网](https://docs.opencv.org/4.x/d6/dd1/tutorial_univ_intrin.html)
+
+踩坑
+
+```c++
+cv::Mat dx = cv::Mat::zeros(img_Re.size(), CV_32FC1);
+dx.data // 是char指针
+// 在Mat接口答应时候，不用管内这个指针类型
+// 但是ipp接受数据时候需要操作
+Ipp32f* pSrc8u_Re = (float*)img_Re.data;
+```
