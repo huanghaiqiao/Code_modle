@@ -428,3 +428,7 @@ int *array1 = new int[1,2,3,4,5];
 (float)(total_num - single_er_num) / total_num * 100 
 // 注意必须只float第一个数就行了
 ```
+
+踩坑
+初始化函数最好有确定值
+out_image.zeros(img_name.size(), img_name.type());
