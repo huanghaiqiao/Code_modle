@@ -26,3 +26,8 @@ docker 查看卷
 ```shell
 docker volume ls
 ```
+
+
+关键字：新加坡新闻、阿拉伯都区半岛电视台新闻
+
+新加坡新闻：[链接一](https://www.zaobao.com/news/china/story20221127-1337470)
