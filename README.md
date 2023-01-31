@@ -14,6 +14,8 @@ BigDL:https://bigdl.readthedocs.io/en/latest/doc/Ray/QuickStart/ray-quickstart.h
 
 [树图在线脑图](https://mind.shutu.cn/?works_guid=b33766f7b8db08a3bb33218d6a520583)
 
+[有道云笔记](https://note.youdao.com/web/#/file/WEB78d86bc9e4a2c915e89a4d3fc8ad67cc/markdown/WEBec9a9bea5af1d98befd4c2cc1f28cde8/)
+
 ## 备注。
 
 ```
