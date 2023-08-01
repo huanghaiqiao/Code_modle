@@ -16,6 +16,7 @@ BigDL:https://bigdl.readthedocs.io/en/latest/doc/Ray/QuickStart/ray-quickstart.h
 
 [有道云笔记](https://note.youdao.com/web/#/file/WEB78d86bc9e4a2c915e89a4d3fc8ad67cc/markdown/WEBec9a9bea5af1d98befd4c2cc1f28cde8/)
 
+[在线博客](https://app.gitbook.com/o/7eDGt6MHbQfYTMaiOsAZ/s/8xpOOappnDFEt83jb7zA/)
 ## 备注。
 
 ```
