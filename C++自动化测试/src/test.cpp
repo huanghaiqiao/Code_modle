@@ -4,6 +4,7 @@
 #include <vector>
 #include <map>
 #include <chrono>
+#include <cctype> // for std::isprint
 #include "demo.h"
 
 #define NUM 10
@@ -50,11 +51,22 @@ std::vector<std::pair<std::string, std::vector<int>>> GetTestValuesFromConfig(co
         // std::vector<int> index = {0, 0};
 
         // 使用逗号分隔每个值
+        int vvv = 0;
         while (std::getline(line_stream, every_cell, ','))
         {
+            std::cout << every_cell.size() << "-every_cell-" << every_cell << endl;
+            if (every_cell.size() == 1 && !std::isprint(every_cell[0]))
+            {
+                // 跳过不可打印字符
+                continue;
+            }
+
             every_line.push_back(every_cell);
         }
-        every_line.pop_back();
+        for (auto &every_cell : every_line)
+        {
+            std::cout << every_cell << "====" << endl;
+        }
         csv_msg.push_back(every_line);
 
         if (every_line[0].size())
@@ -83,7 +95,7 @@ std::vector<std::pair<std::string, std::vector<int>>> GetTestValuesFromConfig(co
     // 遍历字典并打印元素
     for (const auto &kv : testcase_key_value)
     {
-        std::cout << "键: " << kv.first << ", 值: ";
+        std::cout << "测试用例名称: " << kv.first << ", 行数起始终止: ";
         test_case_id.push_back(1);
         m.push_back(kv);
         for (int num : kv.second)
@@ -160,7 +172,9 @@ public:
     TestParam test_param;
     // headlampCtlMsg multi_inputs[NUM][MAX_ELEMENT_NUM];
     // headlampCtlMsg result[NUM][MAX_ELEMENT_NUM];
-    int statu_HighWay = 0;
+    // int statu_HighWay = 0;
+    int tmp_a = 0;
+    int tmp_b = 0;
 
 private:
     void SetUp() override
@@ -168,56 +182,38 @@ private:
         // std::memset(multi_inputs, 0, sizeof(multi_inputs));
         // std::memset(result, 0, sizeof(result));
         test_param = GetParam();
+        // tmp_a = std::stoi(test_param.second[0]);
+        // tmp_b = std::stoi(test_param.second[1]);
         // cout << test_param.first << "," << test_param.second[0] << "," << test_param.second[1] << endl;
-        statu_HighWay = std::stoi(csv_msg[test_param.second[0]][10]);
-        for (int index = test_param.second[0]; index <= test_param.second[1]; index++)
-        {
-            int row = std::stoi(csv_msg[index][2]);
-            int col = std::stoi(csv_msg[index][3]);
-            int veh_id = std::stoi(csv_msg[index][4]);
-            int DarkAreaAglHonStat = std::stoi(csv_msg[index][5]);
-            int DarkAreaAglHonEnd = std::stoi(csv_msg[index][6]);
-            int distanc = std::stoi(csv_msg[index][7]);
-            int dynamicLight_type = std::stoi(csv_msg[index][8]);
-            int GfaSetMode = std::stoi(csv_msg[index][9]);
+        int index = test_param.second[0];
+        cout << csv_msg[index][1] << " " << csv_msg[index][2] << endl;
+        tmp_a = std::stoi(csv_msg[index][1]);
+        tmp_b = std::stoi(csv_msg[index][2]);
+        // statu_HighWay = std::stoi(csv_msg[test_param.second[0]][10]);
+        // for (int index = test_param.second[0]; index <= test_param.second[1]; index++)
+        // {
+        //     int row = std::stoi(csv_msg[index][2]);
+        //     int col = std::stoi(csv_msg[index][3]);
+        //     int veh_id = std::stoi(csv_msg[index][4]);
+        //     int DarkAreaAglHonStat = std::stoi(csv_msg[index][5]);
+        //     int DarkAreaAglHonEnd = std::stoi(csv_msg[index][6]);
+        //     int distanc = std::stoi(csv_msg[index][7]);
+        //     int dynamicLight_type = std::stoi(csv_msg[index][8]);
+        //     int GfaSetMode = std::stoi(csv_msg[index][9]);
 
-            // multi_inputs[row][col].veh_id = veh_id;
-            // multi_inputs[row][col].DarkAreaAglHonStat = DarkAreaAglHonStat;
-            // multi_inputs[row][col].DarkAreaAglHonEnd = DarkAreaAglHonEnd;
-            // multi_inputs[row][col].distanc = distanc;
-            // multi_inputs[row][col].dynamicLight_type = dynamicLight_type;
-            // multi_inputs[row][col].GfaSetMode = GfaSetMode;
-        }
+        //     // multi_inputs[row][col].veh_id = veh_id;
+        //     // multi_inputs[row][col].DarkAreaAglHonStat = DarkAreaAglHonStat;
+        //     // multi_inputs[row][col].DarkAreaAglHonEnd = DarkAreaAglHonEnd;
+        //     // multi_inputs[row][col].distanc = distanc;
+        //     // multi_inputs[row][col].dynamicLight_type = dynamicLight_type;
+        //     // multi_inputs[row][col].GfaSetMode = GfaSetMode;
+        // }
         testCaseCount++;
-        // cout << "[info]: 测试用例序号： " << testCaseCount << endl;
+        cout << "[info]: 测试用例序号： " << testCaseCount << endl;
     }
 
     void TearDown() override
     {
-        const ::testing::TestInfo *const test_info =
-            ::testing::UnitTest::GetInstance()->current_test_info();
-        // data_json[test_param.first]["Status"] = (test_info->result()->Passed() ? "Passed" : "Failed");
-        string Status = test_info->result()->Passed() ? "Passed" : "Failed";
-        data_json[test_param.first]["Status"] = Status;
-        data_json[test_param.first]["statu_HighWay"] = statu_HighWay;
-        csv_msg[test_param.second[0]].insert((csv_msg[test_param.second[0]]).end(), Status);
-        if (test_info->result()->Failed())
-        {
-            string msg = test_info->result()->GetTestPartResult(0).message();
-            data_json[test_param.first]["Failure"] = msg;
-        }
-
-        for (int i = 0; i < NUM; ++i)
-        {
-            // std::string string_tmp = print_zones(result[i]);
-            // data_json[test_param.first]["output_status_" + to_string(i)] = string_tmp;
-        }
-
-        for (int i = 0; i < NUM; ++i)
-        {
-            // std::string string_tmp = print_zones(multi_inputs[i]);
-            // data_json[test_param.first]["input_status_" + to_string(i)] = string_tmp;
-        }
     }
 };
 
@@ -231,9 +227,9 @@ TEST_P(MyParametrizedTest, MyTestCase)
     int a = 1;
     int b = 2;
     std::cout << "a+b=" << std::endl;
-    add_num(a, b);
+    add_num(tmp_a, tmp_b);
     // addOrConcatenate<int, int>(a, b);
-    // test_param = GetParam();
+    test_param = GetParam();
     // 获取所需要的执行时间
     float run_time = std::stof(csv_msg[test_param.second[0]][1]);
     cout << run_time << endl;
@@ -244,12 +240,29 @@ TEST_P(MyParametrizedTest, MyTestCase)
 // 运行测试
 int main(int argc, char **argv)
 {
+    int opt;
     std::ofstream file("result.json");
     if (!file.is_open())
     {
         std::cerr << "Error opening file." << std::endl;
         exit(-1);
     }
+
+        // 短选项解析
+    while ((opt = getopt(argc, argv, "i:o:")) != -1) {
+        switch (opt) {
+            case 'i': // -i option
+                input_file = optarg;
+                break;
+            case 'o': // -o option
+                output_file = optarg;
+                break;
+            default:
+                std::cerr << "Usage: " << argv[0] << " -i <input> -o <output>" << std::endl;
+                return 1;
+        }
+    }
+
     ::testing::InitGoogleTest(&argc, argv);
     int test_result = RUN_ALL_TESTS();
     file << std::setw(4) << data_json;
