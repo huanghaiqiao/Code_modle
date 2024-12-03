@@ -26,6 +26,9 @@
 
 int add_num(int a, int b){
     std::cout << "================================" << std::endl;
+    if(a > b){
+        return 0;
+    }
     return a + b;
 }
 
